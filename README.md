@@ -34,8 +34,8 @@ Connect your store to Ovesio to unlock powerful capabilities:
 ---
 
 ## Installation
-1.  **Download:** Download the zip archive called `ovesio_ecommerce.zip` from the [GitHub repository](https://github.com/ovesio/magento2-ecommerce-intelligence) releases section.
-2. Extract the content of the downloaded zip archive and upload it using FTP to `app/code/Ovesio/Ecommerce` in your Magento 2 installation.
+1.  Download the `ovesio_ecommerce.zip` archive from the [Releases](https://github.com/ovesio/ovesio-ecommerce-magento2/releases) page.
+2. Extract the content of the downloaded zip archive and upload it using FTP to `app/code/` in your Magento 2 installation.
 3. Enable the module:
     ```bash
     bin/magento module:enable Ovesio_Ecommerce

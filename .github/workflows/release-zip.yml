@@ -1,0 +1,39 @@
+name: build-plugin-zip
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  zip:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build zip module
+        run: |
+          set -euo pipefail
+
+          PLUGIN="Ovesio/Ecommerce"
+          BUILD_DIR="$(mktemp -d)"
+          mkdir -p "${BUILD_DIR}/${PLUGIN}"
+
+          rsync -a ./ "${BUILD_DIR}/${PLUGIN}/" \
+            --exclude '.git' \
+            --exclude '.git/' \
+            --exclude '.github' \
+            --exclude '.github/'
+
+          (cd "${BUILD_DIR}" && zip -r "${GITHUB_WORKSPACE}/ovesio_ecommerce.zip" "${PLUGIN}")
+
+      - name: Upload asset
+        uses: softprops/action-gh-release@v1
+        with:
+          files: ovesio_ecommerce.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
