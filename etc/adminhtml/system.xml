@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="ovesio" translate="label" sortOrder="200">
+            <label>Ovesio</label>
+        </tab>
+        <section id="ovesio_ecommerce" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Ecommerce Intelligence</label>
+            <tab>ovesio</tab>
+            <resource>Ovesio_Ecommerce::config</resource>
+            <group id="general" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Settings</label>
+                <field id="info" translate="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <frontend_model>Ovesio\Ecommerce\Block\Adminhtml\System\Config\Info</frontend_model>
+                </field>
+                <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Status</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="export_duration" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Order Export Period</label>
+                    <source_model>Ovesio\Ecommerce\Model\Config\Source\Duration</source_model>
+                    <comment>Choose the historical period for analysis.</comment>
+                </field>
+                <field id="order_statuses" translate="label" type="multiselect" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Order Statuses</label>
+                    <source_model>Ovesio\Ecommerce\Model\Config\Source\OrderStatuses</source_model>
+                    <comment>Select the order statuses to export. Leave empty to use default (standard valid orders).</comment>
+                </field>
+
+            </group>
+        </section>
+    </system>
+</config>

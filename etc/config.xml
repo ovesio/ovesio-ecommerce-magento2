@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <ovesio_ecommerce>
+            <general>
+                <active>0</active>
+                <export_duration>12</export_duration>
+                <order_statuses></order_statuses>
+                <hash></hash>
+            </general>
+        </ovesio_ecommerce>
+    </default>
+</config>

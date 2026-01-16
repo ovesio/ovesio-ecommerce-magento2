@@ -1,0 +1,21 @@
+{
+    "name": "ovesio/ecommerce-intelligence",
+    "description": "Ovesio - Ecommerce Intelligence for Magento 2",
+    "version": "1.0.0",
+    "type": "magento2-module",
+    "license": "AFL-3.0",
+    "authors": [
+        {
+            "name": "Ovesio",
+            "email": "contact@ovesio.com"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Ovesio\\Ecommerce\\": ""
+        }
+    }
+}
